@@ -9,7 +9,7 @@ Depois quero usar esse ambiente para estudar coisas de **Blue Team**, como:
 - Criação de alertas 
 - Identificação de atividades suspeitas
 
-Vou contruindo e documentando tudo aos poucos. O progresse completo vai ficar no repositório para servir com meu portfólio. 
+Vou contruindo e documentando tudo aos poucos. O progresso completo vai ficar no repositório para servir com meu portfólio. 
 
 markdown
 
