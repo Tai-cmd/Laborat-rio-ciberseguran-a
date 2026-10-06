@@ -71,3 +71,25 @@ sudo nft add rule inet filter input tcp dport 22 accept
 sudo nft add rule inet filter input tcp dport 80 accept
 sudo nft add rule inet filter input tcp dport 10050 accept
 sudo nft add rule inet filter input iif lo accept
+
+
+
+## 🧪 Teste de Detecção — Outro Dispositivo na Rede
+
+### Cenário:
+Testei o monitoramento fazendo tentativas de acesso **de outro computador** (Windows) para verificar se o sistema detecta origens diferentes.
+
+- **Origem:** Computador Windows — `192.168.19.56`
+- **Alvo:** Servidor Debian
+- **Credenciais:** inválidas (usuário inexistente/senha errada)
+- **Tentativas:** 3 em menos de 15 segundos
+
+### Evidência capturada:
+
+out 06 17:00:07 webserver sshd-session[14529]: Failed password for invalid user senhaerrada from 192.168.19.56 port 26833 ssh2
+out 06 17:00:12 webserver sshd-session[14529]: Failed password for invalid user senhaerrada from 192.168.19.56 port 26833 ssh2
+out 06 17:00:18 webserver sshd-session[14529]: Failed password for invalid user senhaerrada from 192.168.19.56 port 26833 ssh2
+
+
+### ✅ Conclusão:
+O sistema detecta tentativas de acesso vindas de **qualquer dispositivo** na rede — não apenas de dentro do servidor. A origem é identificada com IP, porta e horário exatos.
