@@ -99,20 +99,24 @@ O sistema detecta tentativas de acesso vindas de **qualquer dispositivo** na red
 ---
 
 
+
+---
+
 ## 💾 Monitoramento de Espaço em Disco
 
-- **Item:** `vfs.fs.size[/,pfree]` — Porcentagem de espaço livre na partição raiz
+- **Item:** `vfs.fs.size[/,pfree]` — Porcentagem de espaço livre
 - **Valor atual:** ~63% livre ✅
-- **Gatilho de alerta:** Menos de 10% livre → dispara aviso ⚠️
-
-# Gráfico de uso:
-![Gráfico — Espaço em Disco](Screenshot%202026-10-07%20at%2013-10-15%20appliance%20History%20refreshed%20every%2030%20sec.png)
+- **Alerta:** Menos de 10% livre → avisa ⚠️
 
 ### Dados em tempo real:
-![Dados mais recentes — Espaço em Disco](Screenshot%202026-10-07%20at%2013-09-55%20appliance%20Latest%20data.png)
+![Dados — Espaço em Disco](disco_dados.png)
 
-### Expressão do gatilho:
+### Gráfico de uso:
+![Gráfico — Espaço em Disco](disco_grafico.png)
+
+### Expressão do alerta:
+
 last("Servidor Laboratório/vfs.fs.size[/,pfree]") < 10
 
-**Status:** Monitorando normalmente ✅
 
+**Status:** ✅ Monitorando normalmente
