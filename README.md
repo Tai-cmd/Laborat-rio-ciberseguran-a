@@ -93,3 +93,26 @@ out 06 17:00:18 webserver sshd-session[14529]: Failed password for invalid user 
 
 ### ✅ Conclusão:
 O sistema detecta tentativas de acesso vindas de **qualquer dispositivo** na rede — não apenas de dentro do servidor. A origem é identificada com IP, porta e horário exatos.
+
+
+
+---
+
+
+## 💾 Monitoramento de Espaço em Disco
+
+- **Item:** `vfs.fs.size[/,pfree]` — Porcentagem de espaço livre na partição raiz
+- **Valor atual:** ~63% livre ✅
+- **Gatilho de alerta:** Menos de 10% livre → dispara aviso ⚠️
+
+# Gráfico de uso:
+![Gráfico — Espaço em Disco](Screenshot%202026-10-07%20at%2013-10-15%20appliance%20History%20refreshed%20every%2030%20sec.png)
+
+### Dados em tempo real:
+![Dados mais recentes — Espaço em Disco](Screenshot%202026-10-07%20at%2013-09-55%20appliance%20Latest%20data.png)
+
+### Expressão do gatilho:
+last("Servidor Laboratório/vfs.fs.size[/,pfree]") < 10
+
+**Status:** Monitorando normalmente ✅
+
