@@ -120,3 +120,55 @@ last("Servidor Laboratório/vfs.fs.size[/,pfree]") < 10
 
 
 **Status:** ✅ Monitorando normalmente
+
+
+---
+
+## 📚 Comandos Essenciais — Guia de Estudo
+
+Aqui estão os comandos mais usados durante o laboratório, organizados para consulta rápida.
+
+### 📂 Navegação e Arquivos
+```bash
+pwd                  # Mostra onde estou
+ls                   # Lista arquivos
+ls -la               # Lista tudo (inclusive ocultos)
+cd nome-pasta        # Entra na pasta
+cd ..                # Volta uma pasta
+mkdir nome-pasta     # Cria pasta nova
+cp origem destino    # Copia arquivo
+mv origem destino    # Renomeia/move
+rm nome-arquivo      # Apaga arquivo
+cat nome-arquivo     # Mostra conteúdo
+
+
+✏️ Edição de Arquivos (Nano)
+
+
+nano nome-arquivo    # Abre para editar
+# Ctrl + O → Salvar
+# Ctrl + X → Sair
+# Ctrl + K → Apagar linha
+
+🔄 Serviços do Sistema
+
+ip a                 # Mostra endereço IP
+df -h                # Espaço em disco
+free -h              # Memória RAM
+uptime               # Tempo ligado / carga
+top                  # Processos rodando → q para sair
+
+
+🔍 Filtros e Busca
+
+comando | grep "palavra"   # Filtra linhas com a palavra
+comando | wc -l            # Conta linhas
+journalctl -u ssh --since "10m ago"  # Logs dos últimos 10 min
+
+🔒 Rede e Segurança
+
+ping 192.168.X.X         # Testa conexão
+nmap -sV localhost       # Varrer portas locais
+ss -tulpn                # Ver portas abertas
+sudo nft list ruleset    # Ver firewall
+
